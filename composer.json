@@ -1,3 +1,8 @@
 {
-    "name":"wdev/vagas"
+    "name":"wdev/vagas",
+    "autoload":{
+        "psr-4":{
+            "App\\":"app/"
+        }
+    }
 }
