@@ -31,4 +31,18 @@ class vaga
      * @var string
      */
     public $data;
+
+    /**
+     * Método responsável por cadastrar uma nova vaga no banco
+     * @return boolean
+     */
+    public function cadastrar(){
+        //DEFINIR A DATA
+        $this->data = date('Y-m-d H:i:s');
+        //INSERIR A VAGA
+        
+        //ATRIBUIR O ID DA VAGA NA INSTACIA
+
+        //RETORNA SUCESSO
+    }
 }
