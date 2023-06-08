@@ -61,4 +61,19 @@ class Database
             die("ERROR: " . $e->getMessage());
         }
     }
+
+    /**
+     * Método responsável por inserir dados no banco
+     * @param array $values [field => value ]
+     * @return integer
+     */
+    public function insert($values){
+        //DADOS DA QUERY
+        $fields = array_keys($values);
+        $binds = array_pad([],count($fields),'?');
+
+        //MONTA A QUERY
+        $query = "INSERT INTO ".$this->table." (".implode(',',$fields).") VALUES (".implode(',',$binds).")";
+        echo $query;
+    }
 }

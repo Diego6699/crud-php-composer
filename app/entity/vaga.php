@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use \App\Db\Database;
+
 class vaga
 {
     /**
@@ -36,11 +38,19 @@ class vaga
      * Método responsável por cadastrar uma nova vaga no banco
      * @return boolean
      */
-    public function cadastrar(){
+    public function cadastrar()
+    {
         //DEFINIR A DATA
         $this->data = date('Y-m-d H:i:s');
         //INSERIR A VAGA
-        
+        $obDatabase = new Database('vagas');
+        $obDatabase-> insert([
+            'titulo'    => $this->titulo,
+            'descricao' => $this->descricao,
+            'ativo'     => $this->ativo,
+            'data'      => $this->data
+
+        ]);
         //ATRIBUIR O ID DA VAGA NA INSTACIA
 
         //RETORNA SUCESSO
